@@ -1,13 +1,12 @@
-import express from 'express';
+import express from "express";
+import mongoose from "mongoose";
 
 const app = express();
 
-app.use("/", (req,res,next) => {
-    res.json({
-        "msg": "Hello World"
-        });
-});
-
-hi 
-
-app.listen(3000);
+mongoose
+  .connect(
+    "mongodb+srv://adrijbhadra:adrijbhadra@cluster0.dhelf4v.mongodb.net/Blog"
+  )
+  .then(() => app.listen(3000))
+  .then(() => console.log("connected to database"))
+  .catch((err) => console.log(err));
