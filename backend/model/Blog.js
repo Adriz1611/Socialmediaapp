@@ -7,7 +7,8 @@ const blogSchema = new Schema({
   description: { type: String, required: true },
   image: { type: String, required: true },
   user: {
-    type: String,
+    type: mongoose.Types.ObjectId,
+    ref: "User",
     required: true,
   },
 });
